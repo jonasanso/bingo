@@ -7,4 +7,13 @@ lazy val bingo =
     .in(file("bingo"))
     .settings(stdSettings("bingo"))
     .settings(libraryDependencies ++= bingoDeps)
+    .enablePlugins(GraalVMNativeImagePlugin)
+    .settings(graalVMNativeImageOptions ++= Seq(
+      "--no-fallback",
+      "--initialize-at-build-time",
+      "--enable-http",
+      "--enable-https",
+      "--enable-all-security-services"
+    ))
+
 

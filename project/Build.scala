@@ -1,6 +1,5 @@
 import sbt._
 import sbt.Keys._
-import mdoc.MdocPlugin.autoImport.mdocIn
 
 object Build {
 
